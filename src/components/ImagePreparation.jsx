@@ -366,7 +366,7 @@ function ImagePreparation({ image, aspectRatios, selectedRatio, onRatioChange, o
               onMouseLeave={handleMouseUp}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
+              onTouchEnd={handleMouseUp}
             />
           </Box>
 

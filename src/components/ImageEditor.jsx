@@ -4,11 +4,12 @@ import ImagePreparation from './ImagePreparation';
 import ImageSlicer from './ImageSlicer';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const ASPECT_RATIOS = {
-  '16:9': 16/9,
+const aspectRatios = {
+  '1:1': 1,
   '4:3': 4/3,
+  '16:9': 16/9,
+  '2:3': 2/3,  // Nova proporção
   '3:2': 3/2,
-  '1:1': 1
 };
 
 function ImageEditor({ image, onReset }) {
@@ -39,7 +40,7 @@ function ImageEditor({ image, onReset }) {
       {step === 'prepare' ? (
         <ImagePreparation 
           image={image}
-          aspectRatios={ASPECT_RATIOS}
+          aspectRatios={aspectRatios}
           selectedRatio={selectedRatio}
           onRatioChange={setSelectedRatio}
           onComplete={handlePrepareComplete}
