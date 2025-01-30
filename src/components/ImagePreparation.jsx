@@ -1,6 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { Box, Button, FormControl, InputLabel, Select, MenuItem, Typography } from '@mui/material';
 
+const aspectRatios = {
+  '1:1': 1,
+  '4:3': 4/3,
+  '16:9': 16/9,
+  '2:3': 2/3,
+  '3:2': 3/2,
+};
+
 function ImagePreparation({ image, aspectRatios, selectedRatio, onRatioChange, onComplete }) {
   const canvasRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
